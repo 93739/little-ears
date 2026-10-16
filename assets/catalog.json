@@ -1,0 +1,566 @@
+[
+  {
+    "id": "hello_sunshine",
+    "title": "Hello, Sunshine",
+    "subtitle": "你好，小太阳",
+    "category": "rhymes",
+    "art": "sun",
+    "color": "F9E7AF",
+    "duration": 38.443,
+    "asset": "assets/audio/hello_sunshine.m4a",
+    "captions": [
+      {
+        "at": 1.31,
+        "en": "Hello, sunshine. Hello, day.",
+        "zh": "你好，阳光。你好，新的一天。"
+      },
+      {
+        "at": 6.736,
+        "en": "Little birds are here to play.",
+        "zh": "小鸟们来玩啦。"
+      },
+      {
+        "at": 10.789,
+        "en": "Wave your hands and say hello.",
+        "zh": "挥挥小手，说声你好。"
+      },
+      {
+        "at": 14.897,
+        "en": "Hello, hello. Here we go!",
+        "zh": "你好，你好。我们出发吧！"
+      },
+      {
+        "at": 19.627,
+        "en": "Hello, sunshine. Hello, day.",
+        "zh": "你好，阳光。你好，新的一天。"
+      },
+      {
+        "at": 25.052,
+        "en": "Little birds are here to play.",
+        "zh": "小鸟们来玩啦。"
+      },
+      {
+        "at": 29.105,
+        "en": "Wave your hands and say hello.",
+        "zh": "挥挥小手，说声你好。"
+      },
+      {
+        "at": 33.214,
+        "en": "Hello, hello. Here we go!",
+        "zh": "你好，你好。我们出发吧！"
+      }
+    ]
+  },
+  {
+    "id": "color_day",
+    "title": "A Colorful Day",
+    "subtitle": "彩色的一天",
+    "category": "rhymes",
+    "art": "rainbow",
+    "color": "F4DBCE",
+    "duration": 29.353,
+    "asset": "assets/audio/color_day.m4a",
+    "captions": [
+      {
+        "at": 1.31,
+        "en": "Red, red. A little red ball.",
+        "zh": "红色，红色。一只红色的小球。"
+      },
+      {
+        "at": 5.83,
+        "en": "Blue, blue. A sky for us all.",
+        "zh": "蓝色，蓝色。我们头顶的天空。"
+      },
+      {
+        "at": 10.654,
+        "en": "Yellow, yellow. A warm little light.",
+        "zh": "黄色，黄色。一束温暖的光。"
+      },
+      {
+        "at": 15.624,
+        "en": "Green, green. The leaves look bright.",
+        "zh": "绿色，绿色。叶子真鲜亮。"
+      },
+      {
+        "at": 20.468,
+        "en": "Red and blue, yellow and green.",
+        "zh": "红色和蓝色，黄色和绿色。"
+      },
+      {
+        "at": 24.698,
+        "en": "So many colors to be seen!",
+        "zh": "好多好多颜色等着我们看！"
+      }
+    ]
+  },
+  {
+    "id": "count_with_me",
+    "title": "One, Two, Three",
+    "subtitle": "一起数一数",
+    "category": "rhymes",
+    "art": "flowers",
+    "color": "E1EAD4",
+    "duration": 29.719,
+    "asset": "assets/audio/count_with_me.m4a",
+    "captions": [
+      {
+        "at": 1.31,
+        "en": "One little flower in the sun.",
+        "zh": "阳光下有一朵小花。"
+      },
+      {
+        "at": 5.407,
+        "en": "Two little rabbits start to run.",
+        "zh": "两只小兔开始跑。"
+      },
+      {
+        "at": 9.57,
+        "en": "Three little birds up in a tree.",
+        "zh": "三只小鸟在树上。"
+      },
+      {
+        "at": 13.631,
+        "en": "One, two, three. Count with me!",
+        "zh": "一、二、三。跟我一起数！"
+      },
+      {
+        "at": 18.901,
+        "en": "One little flower. Two little rabbits.",
+        "zh": "一朵小花。两只小兔。"
+      },
+      {
+        "at": 23.73,
+        "en": "Three little birds. One, two, three!",
+        "zh": "三只小鸟。一、二、三！"
+      }
+    ]
+  },
+  {
+    "id": "little_animals",
+    "title": "Little Animal Parade",
+    "subtitle": "小动物来啦",
+    "category": "rhymes",
+    "art": "bunny",
+    "color": "E5E2F1",
+    "duration": 32.468,
+    "asset": "assets/audio/little_animals.m4a",
+    "captions": [
+      {
+        "at": 1.31,
+        "en": "A little cat says meow, meow, meow.",
+        "zh": "一只小猫喵喵叫。"
+      },
+      {
+        "at": 6.656,
+        "en": "A little dog says woof, woof, woof.",
+        "zh": "一只小狗汪汪叫。"
+      },
+      {
+        "at": 11.759,
+        "en": "A little duck says quack, quack, quack.",
+        "zh": "一只小鸭嘎嘎叫。"
+      },
+      {
+        "at": 17.128,
+        "en": "A little rabbit hops right back.",
+        "zh": "一只小兔蹦蹦跳回来。"
+      },
+      {
+        "at": 21.314,
+        "en": "Hello, cat. Hello, dog.",
+        "zh": "你好，小猫。你好，小狗。"
+      },
+      {
+        "at": 26.391,
+        "en": "Hello, duck. Hop, rabbit, hop!",
+        "zh": "你好，小鸭。跳吧，小兔，跳吧！"
+      }
+    ]
+  },
+  {
+    "id": "good_morning",
+    "title": "Good Morning",
+    "subtitle": "早安，好心情",
+    "category": "daily",
+    "art": "sun",
+    "color": "F9E7AF",
+    "duration": 27.273,
+    "asset": "assets/audio/good_morning.m4a",
+    "captions": [
+      {
+        "at": 1.31,
+        "en": "Good morning!",
+        "zh": "早上好！"
+      },
+      {
+        "at": 4.317,
+        "en": "Good morning, Mommy.",
+        "zh": "早上好，妈妈。"
+      },
+      {
+        "at": 8.02,
+        "en": "Good morning, Daddy.",
+        "zh": "早上好，爸爸。"
+      },
+      {
+        "at": 11.723,
+        "en": "Open your eyes.",
+        "zh": "睁开眼睛。"
+      },
+      {
+        "at": 14.952,
+        "en": "Stretch your arms.",
+        "zh": "伸伸胳膊。"
+      },
+      {
+        "at": 18.48,
+        "en": "Hello, sunshine!",
+        "zh": "你好，阳光！"
+      },
+      {
+        "at": 22.443,
+        "en": "Good morning. A new day is here.",
+        "zh": "早上好。新的一天到啦。"
+      }
+    ]
+  },
+  {
+    "id": "yummy_fruit",
+    "title": "Yummy Fruit",
+    "subtitle": "水果真好吃",
+    "category": "daily",
+    "art": "fruit",
+    "color": "F7DDCE",
+    "duration": 29.173,
+    "asset": "assets/audio/yummy_fruit.m4a",
+    "captions": [
+      {
+        "at": 1.31,
+        "en": "Look! An apple.",
+        "zh": "看！一个苹果。"
+      },
+      {
+        "at": 4.933,
+        "en": "A red apple.",
+        "zh": "一个红苹果。"
+      },
+      {
+        "at": 8.061,
+        "en": "Look! A banana.",
+        "zh": "看！一根香蕉。"
+      },
+      {
+        "at": 11.695,
+        "en": "A yellow banana.",
+        "zh": "一根黄香蕉。"
+      },
+      {
+        "at": 15.068,
+        "en": "Would you like some fruit?",
+        "zh": "想吃点水果吗？"
+      },
+      {
+        "at": 18.689,
+        "en": "Yes, please.",
+        "zh": "好的，谢谢。"
+      },
+      {
+        "at": 22.243,
+        "en": "Yummy, yummy!",
+        "zh": "真好吃，真好吃！"
+      },
+      {
+        "at": 25.68,
+        "en": "Thank you!",
+        "zh": "谢谢！"
+      }
+    ]
+  },
+  {
+    "id": "tidy_up",
+    "title": "Time to Tidy Up",
+    "subtitle": "玩具回家啦",
+    "category": "daily",
+    "art": "rainbow",
+    "color": "DCEAE5",
+    "duration": 25.969,
+    "asset": "assets/audio/tidy_up.m4a",
+    "captions": [
+      {
+        "at": 1.31,
+        "en": "Time to tidy up.",
+        "zh": "该收拾啦。"
+      },
+      {
+        "at": 4.765,
+        "en": "Here is a ball.",
+        "zh": "这里有一个球。"
+      },
+      {
+        "at": 7.937,
+        "en": "Put the ball in the box.",
+        "zh": "把球放进盒子里。"
+      },
+      {
+        "at": 11.693,
+        "en": "Here is a little car.",
+        "zh": "这里有一辆小车。"
+      },
+      {
+        "at": 15.167,
+        "en": "Put the car in the box.",
+        "zh": "把小车放进盒子里。"
+      },
+      {
+        "at": 18.9,
+        "en": "All done!",
+        "zh": "收好啦！"
+      },
+      {
+        "at": 21.907,
+        "en": "Thank you for helping.",
+        "zh": "谢谢你来帮忙。"
+      }
+    ]
+  },
+  {
+    "id": "good_night",
+    "title": "Good Night, Little One",
+    "subtitle": "晚安，小宝贝",
+    "category": "daily",
+    "art": "moon",
+    "color": "DFE3EF",
+    "duration": 27.761,
+    "asset": "assets/audio/good_night.m4a",
+    "captions": [
+      {
+        "at": 1.31,
+        "en": "It is bedtime.",
+        "zh": "该睡觉啦。"
+      },
+      {
+        "at": 4.671,
+        "en": "Put on your pajamas.",
+        "zh": "穿上睡衣。"
+      },
+      {
+        "at": 8.229,
+        "en": "Here is your little bear.",
+        "zh": "你的小熊在这里。"
+      },
+      {
+        "at": 11.727,
+        "en": "Close your eyes.",
+        "zh": "闭上眼睛。"
+      },
+      {
+        "at": 14.96,
+        "en": "Good night, Mommy.",
+        "zh": "晚安，妈妈。"
+      },
+      {
+        "at": 18.549,
+        "en": "Good night, Daddy.",
+        "zh": "晚安，爸爸。"
+      },
+      {
+        "at": 22.139,
+        "en": "Good night, little one. Sweet dreams.",
+        "zh": "晚安，小宝贝。做个好梦。"
+      }
+    ]
+  },
+  {
+    "id": "little_seed",
+    "title": "The Little Seed",
+    "subtitle": "小种子的故事",
+    "category": "stories",
+    "art": "flowers",
+    "color": "E1EAD4",
+    "duration": 30.228,
+    "asset": "assets/audio/little_seed.m4a",
+    "captions": [
+      {
+        "at": 1.31,
+        "en": "Here is a little seed.",
+        "zh": "这里有一颗小种子。"
+      },
+      {
+        "at": 4.354,
+        "en": "The seed sleeps in the soil.",
+        "zh": "小种子睡在泥土里。"
+      },
+      {
+        "at": 7.786,
+        "en": "Drip, drop. Here comes the rain.",
+        "zh": "滴答滴答。下雨啦。"
+      },
+      {
+        "at": 12.06,
+        "en": "Hello, sun! The sun is warm.",
+        "zh": "你好，太阳！阳光暖暖的。"
+      },
+      {
+        "at": 16.475,
+        "en": "The little seed grows and grows.",
+        "zh": "小种子长呀长。"
+      },
+      {
+        "at": 20.023,
+        "en": "A little leaf peeks out.",
+        "zh": "一片小叶子探出了头。"
+      },
+      {
+        "at": 23.29,
+        "en": "Now there is a flower!",
+        "zh": "现在，开出一朵花啦！"
+      },
+      {
+        "at": 26.3,
+        "en": "Hello, little flower.",
+        "zh": "你好，小花。"
+      }
+    ]
+  },
+  {
+    "id": "sleepy_bunny",
+    "title": "The Sleepy Bunny",
+    "subtitle": "小兔要睡觉",
+    "category": "stories",
+    "art": "bunny",
+    "color": "E5E2F1",
+    "duration": 27.569,
+    "asset": "assets/audio/sleepy_bunny.m4a",
+    "captions": [
+      {
+        "at": 1.31,
+        "en": "A little bunny looks up at the moon.",
+        "zh": "小兔抬头看着月亮。"
+      },
+      {
+        "at": 4.937,
+        "en": "I am sleepy, says Bunny.",
+        "zh": "我困啦，小兔说。"
+      },
+      {
+        "at": 8.703,
+        "en": "Bunny finds a soft little bed.",
+        "zh": "小兔找到一张软软的小床。"
+      },
+      {
+        "at": 12.371,
+        "en": "A little bear is waiting there.",
+        "zh": "一只小熊正在那里等它。"
+      },
+      {
+        "at": 15.731,
+        "en": "Good night, Bear. Good night, Moon.",
+        "zh": "晚安，小熊。晚安，月亮。"
+      },
+      {
+        "at": 20.144,
+        "en": "Bunny closes its eyes.",
+        "zh": "小兔闭上了眼睛。"
+      },
+      {
+        "at": 23.429,
+        "en": "The little bunny is fast asleep.",
+        "zh": "小兔甜甜地睡着了。"
+      }
+    ]
+  },
+  {
+    "id": "red_ball",
+    "title": "Where Is My Ball?",
+    "subtitle": "小球在哪里",
+    "category": "stories",
+    "art": "fruit",
+    "color": "F7DDCE",
+    "duration": 27.204,
+    "asset": "assets/audio/red_ball.m4a",
+    "captions": [
+      {
+        "at": 1.31,
+        "en": "Bunny has a little red ball.",
+        "zh": "小兔有一个红色的小球。"
+      },
+      {
+        "at": 4.664,
+        "en": "The ball rolls away. Roll, roll, roll.",
+        "zh": "小球滚走啦。滚呀，滚呀，滚呀。"
+      },
+      {
+        "at": 9.582,
+        "en": "Where is my ball? asks Bunny.",
+        "zh": "我的小球在哪里？小兔问。"
+      },
+      {
+        "at": 13.132,
+        "en": "Is it under the chair? No.",
+        "zh": "在椅子下面吗？没有。"
+      },
+      {
+        "at": 16.725,
+        "en": "Is it behind the box? Yes!",
+        "zh": "在盒子后面吗？找到了！"
+      },
+      {
+        "at": 20.643,
+        "en": "Here is my ball!",
+        "zh": "我的小球在这里！"
+      },
+      {
+        "at": 23.431,
+        "en": "Bunny and Bear play together.",
+        "zh": "小兔和小熊一起玩。"
+      }
+    ]
+  },
+  {
+    "id": "rainy_day",
+    "title": "A Little Rainy Day",
+    "subtitle": "滴答下雨天",
+    "category": "stories",
+    "art": "cloud",
+    "color": "DDE9EB",
+    "duration": 26.801,
+    "asset": "assets/audio/rainy_day.m4a",
+    "captions": [
+      {
+        "at": 1.31,
+        "en": "Drip, drop. It is raining.",
+        "zh": "滴答滴答。下雨啦。"
+      },
+      {
+        "at": 5.213,
+        "en": "Bunny puts on yellow boots.",
+        "zh": "小兔穿上黄色的小雨靴。"
+      },
+      {
+        "at": 8.684,
+        "en": "Bear has a big umbrella.",
+        "zh": "小熊有一把大雨伞。"
+      },
+      {
+        "at": 11.887,
+        "en": "Come with me, says Bear.",
+        "zh": "跟我来吧，小熊说。"
+      },
+      {
+        "at": 15.445,
+        "en": "They walk together in the rain.",
+        "zh": "它们一起在雨中散步。"
+      },
+      {
+        "at": 18.783,
+        "en": "The rain stops. Here comes the sun!",
+        "zh": "雨停了。太阳出来啦！"
+      },
+      {
+        "at": 23.143,
+        "en": "Look! A rainbow!",
+        "zh": "看！一道彩虹！"
+      }
+    ]
+  }
+]
