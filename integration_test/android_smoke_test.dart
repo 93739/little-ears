@@ -53,6 +53,6 @@ void main() {
     await tester.pumpAndSettle();
     await tester.tap(find.byKey(const Key('voice-open')));
     await tester.pumpAndSettle();
-    expect(find.text('小耳朵，听你说'), findsOneWidget);
+    expect(find.byKey(const Key('voice-start')), findsOneWidget);
   });
 }

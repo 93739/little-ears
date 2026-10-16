@@ -2,7 +2,9 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import '../controllers/library_controller.dart';
 import '../controllers/voice_controller.dart';
+import '../models/track.dart' show clockLabel;
 import 'theme.dart';
+import 'widgets/illustration.dart';
 
 Future<void> showTimerSheet(BuildContext context, LibraryController library) =>
     showModalBottomSheet<void>(
@@ -11,106 +13,91 @@ Future<void> showTimerSheet(BuildContext context, LibraryController library) =>
       builder: (context) => SafeArea(
         child: SingleChildScrollView(
           padding: const EdgeInsets.fromLTRB(24, 0, 24, 24),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const Text(
-                '听一会儿，就休息',
-                style: TextStyle(fontSize: 23, fontWeight: FontWeight.w800),
-              ),
-              const SizedBox(height: 8),
-              const Text('到时间自动暂停播放。', style: TextStyle(color: muted)),
-              const SizedBox(height: 20),
-              for (final minutes in [5, 10, 15, 30, 60])
-                ListTile(
-                  contentPadding: EdgeInsets.zero,
-                  leading: const Icon(Icons.timer_outlined),
-                  title: Text('$minutes 分钟'),
-                  trailing: const Icon(Icons.chevron_right_rounded),
-                  onTap: () {
-                    library.setSleepTimer(minutes);
-                    Navigator.of(context).pop();
+          child: AnimatedBuilder(
+            animation: library,
+            builder: (context, _) => Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                const Text(
+                  '睡前定时',
+                  style: TextStyle(fontSize: 23, fontWeight: FontWeight.w800),
+                ),
+                const SizedBox(height: 8),
+                Text(
+                  library.remaining == null
+                      ? '选一个时间，听完这一会儿就休息。'
+                      : '将在 ${clockLabel(library.remaining!)} 后暂停播放。',
+                  style: const TextStyle(fontSize: 13, color: muted),
+                ),
+                const SizedBox(height: 22),
+                LayoutBuilder(
+                  builder: (context, constraints) {
+                    final singleColumn =
+                        MediaQuery.textScalerOf(context).scale(1) > 1.4;
+                    final width = singleColumn
+                        ? constraints.maxWidth
+                        : (constraints.maxWidth - 12) / 2;
+                    return Wrap(
+                      spacing: 12,
+                      runSpacing: 12,
+                      children: [
+                        for (final minutes in [5, 10, 15, 30, 45, 60])
+                          SizedBox(
+                            width: width,
+                            child: Material(
+                              color: sage,
+                              borderRadius: BorderRadius.circular(16),
+                              child: InkWell(
+                                borderRadius: BorderRadius.circular(16),
+                                onTap: () {
+                                  library.setSleepTimer(minutes);
+                                  Navigator.of(context).pop();
+                                },
+                                child: Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                    vertical: 20,
+                                    horizontal: 10,
+                                  ),
+                                  child: Center(
+                                    child: Text(
+                                      '$minutes 分钟',
+                                      style: const TextStyle(
+                                        fontSize: 17,
+                                        fontWeight: FontWeight.w700,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                      ],
+                    );
                   },
                 ),
-              ListTile(
-                contentPadding: EdgeInsets.zero,
-                leading: const Icon(Icons.timer_off_outlined),
-                title: const Text('关闭定时'),
-                onTap: () {
-                  library.setSleepTimer(null);
-                  Navigator.of(context).pop();
-                },
-              ),
-            ],
+                const SizedBox(height: 14),
+                SizedBox(
+                  width: double.infinity,
+                  child: TextButton.icon(
+                    onPressed: () {
+                      library.setSleepTimer(null);
+                      Navigator.of(context).pop();
+                    },
+                    icon: const Icon(Icons.timer_off_outlined, size: 20),
+                    label: const Text('关闭定时'),
+                    style: TextButton.styleFrom(
+                      foregroundColor: muted,
+                      minimumSize: const Size(48, 48),
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),
     );
-
-Future<void> showParentSheet(
-  BuildContext context,
-  LibraryController library,
-) => showModalBottomSheet<void>(
-  context: context,
-  isScrollControlled: true,
-  builder: (sheetContext) => SafeArea(
-    child: SingleChildScrollView(
-      padding: const EdgeInsets.fromLTRB(24, 0, 24, 28),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const Text(
-            '陪小耳朵听一听',
-            style: TextStyle(fontSize: 23, fontWeight: FontWeight.w800),
-          ),
-          const SizedBox(height: 8),
-          const Text('简单一点，和孩子一起享受英语。', style: TextStyle(color: muted)),
-          const SizedBox(height: 22),
-          ListTile(
-            contentPadding: EdgeInsets.zero,
-            leading: const Icon(Icons.timer_outlined),
-            title: const Text('设置定时停止'),
-            trailing: const Icon(Icons.chevron_right_rounded),
-            onTap: () {
-              Navigator.of(sheetContext).pop();
-              showTimerSheet(context, library);
-            },
-          ),
-          const Divider(color: sage),
-          const SizedBox(height: 12),
-          const Text(
-            '可以这样说',
-            style: TextStyle(fontWeight: FontWeight.w700, fontSize: 16),
-          ),
-          const SizedBox(height: 10),
-          const Text(
-            '“播放儿歌”  “播放生活英语”  “播放故事”\n“暂停”  “继续播放”  “上一首”  “下一首”\n“收藏这首”  “声音小一点”\n“定时十分钟”  “取消定时”',
-            style: TextStyle(height: 2, color: muted),
-          ),
-          const SizedBox(height: 20),
-          Container(
-            padding: const EdgeInsets.all(16),
-            decoration: BoxDecoration(
-              color: sage,
-              borderRadius: BorderRadius.circular(18),
-            ),
-            child: const Text(
-              '音频已内置，可以离线播放。在语音助手中开启“喊名字唤醒”后，先喊“小耳朵”，听到回应再说指令。离开 App 后停止监听；指令识别在部分设备上需要联网。',
-              style: TextStyle(fontSize: 12, height: 1.8),
-            ),
-          ),
-          const SizedBox(height: 16),
-          const Text(
-            '小耳朵英语 · 试听版 1.0\n原创文本 / 合成朗读',
-            style: TextStyle(color: muted, fontSize: 11, height: 1.8),
-          ),
-        ],
-      ),
-    ),
-  ),
-);
 
 Future<void> showQueueSheet(
   BuildContext context,
@@ -120,7 +107,7 @@ Future<void> showQueueSheet(
   isScrollControlled: true,
   builder: (context) => SafeArea(
     child: SizedBox(
-      height: MediaQuery.sizeOf(context).height * .6,
+      height: MediaQuery.sizeOf(context).height * .65,
       child: AnimatedBuilder(
         animation: library,
         builder: (context, _) {
@@ -129,53 +116,98 @@ Future<void> showQueueSheet(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: const EdgeInsets.fromLTRB(24, 0, 24, 15),
-                child: Text(
-                  '播放列表 · ${queue.length}',
-                  style: const TextStyle(
-                    fontSize: 21,
-                    fontWeight: FontWeight.w800,
-                  ),
-                ),
-              ),
-              Expanded(
-                child: ListView.builder(
-                  itemCount: queue.length,
-                  itemBuilder: (context, index) {
-                    final track = queue[index];
-                    return ListTile(
-                      contentPadding: const EdgeInsets.symmetric(
-                        horizontal: 24,
-                      ),
-                      leading: Text(
-                        '${index + 1}'.padLeft(2, '0'),
-                        style: const TextStyle(color: muted),
-                      ),
-                      title: Text(
-                        track.title,
+                padding: const EdgeInsets.fromLTRB(24, 0, 24, 18),
+                child: Row(
+                  children: [
+                    const Expanded(
+                      child: Text(
+                        '播放列表',
                         style: TextStyle(
-                          color: track.id == library.current.id ? coral : ink,
-                          fontWeight: FontWeight.w600,
+                          fontSize: 23,
+                          fontWeight: FontWeight.w800,
                         ),
                       ),
-                      subtitle: Text(
-                        track.subtitle,
-                        style: const TextStyle(color: muted, fontSize: 12),
+                    ),
+                    Text(
+                      '${queue.length} 段音频',
+                      style: const TextStyle(color: muted, fontSize: 12),
+                    ),
+                  ],
+                ),
+              ),
+              if (library.message != null)
+                Padding(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 24,
+                    vertical: 8,
+                  ),
+                  child: Text(
+                    library.message!,
+                    style: const TextStyle(color: coral, fontSize: 12),
+                  ),
+                ),
+              Expanded(
+                child: ListView.separated(
+                  padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
+                  itemCount: queue.length,
+                  separatorBuilder: (_, _) => const SizedBox(height: 5),
+                  itemBuilder: (context, index) {
+                    final track = queue[index];
+                    final selected = library.current.id == track.id;
+                    return Material(
+                      color: selected ? warm : Colors.transparent,
+                      borderRadius: BorderRadius.circular(16),
+                      child: ListTile(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(16),
+                        ),
+                        contentPadding: const EdgeInsets.symmetric(
+                          horizontal: 10,
+                          vertical: 4,
+                        ),
+                        leading: SizedBox(
+                          width: 46,
+                          height: 46,
+                          child: CoverArt(
+                            scene: track.art,
+                            color: Color(track.color),
+                            radius: 12,
+                          ),
+                        ),
+                        title: Text(
+                          track.subtitle,
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.w700,
+                            color: selected ? coral : ink,
+                          ),
+                        ),
+                        subtitle: Text(
+                          '${track.title} · ${clockLabel(track.duration)}',
+                          maxLines: 2,
+                          style: const TextStyle(fontSize: 11, color: muted),
+                        ),
+                        trailing: Icon(
+                          selected && library.playing
+                              ? Icons.graphic_eq_rounded
+                              : Icons.play_arrow_rounded,
+                          color: selected ? coral : muted,
+                          size: 22,
+                        ),
+                        onTap: library.busy
+                            ? null
+                            : () async {
+                                final ok = await library.playTrack(
+                                  track,
+                                  within: queue,
+                                );
+                                if (context.mounted && ok) {
+                                  Navigator.of(context).pop();
+                                }
+                              },
                       ),
-                      trailing: track.id == library.current.id
-                          ? const Icon(Icons.graphic_eq_rounded, color: coral)
-                          : null,
-                      onTap: library.busy
-                          ? null
-                          : () async {
-                              final ok = await library.playTrack(
-                                track,
-                                within: queue,
-                              );
-                              if (context.mounted && ok) {
-                                Navigator.of(context).pop();
-                              }
-                            },
                     );
                   },
                 ),
@@ -222,7 +254,7 @@ class _VoiceSheet extends StatelessWidget {
             const SizedBox(height: 22),
             Container(
               decoration: BoxDecoration(
-                color: sage,
+                color: warm,
                 borderRadius: BorderRadius.circular(20),
               ),
               child: SwitchListTile.adaptive(
@@ -232,11 +264,11 @@ class _VoiceSheet extends StatelessWidget {
                   style: TextStyle(fontWeight: FontWeight.w700),
                 ),
                 subtitle: const Text(
-                  '在 App 内等你呼唤',
+                  '用声音，选儿歌和故事',
                   style: TextStyle(color: muted, fontSize: 12),
                 ),
                 value: voice.assistantEnabled,
-                activeTrackColor: ink,
+                activeTrackColor: coral,
                 onChanged: (enabled) =>
                     unawaited(voice.setAssistantEnabled(enabled)),
               ),
@@ -331,6 +363,7 @@ class _VoiceSheet extends StatelessWidget {
               children: [
                 _Example('播放儿歌'),
                 _Example('下一首'),
+                _Example('播放故事'),
                 _Example('暂停'),
                 _Example('声音小一点'),
                 _Example('定时十分钟'),

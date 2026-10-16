@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-const ink = Color(0xFF2B463B);
-const muted = Color(0xFF819087);
-const paper = Color(0xFFFAF9F4);
-const coral = Color(0xFFED835D);
-const sage = Color(0xFFE7EDE2);
+const ink = Color(0xFF26344A);
+const muted = Color(0xFF6D798B);
+const paper = Color(0xFFF7F8FA);
+const coral = Color(0xFFF47D59);
+const sage = Color(0xFFEDF1F6);
+const line = Color(0xFFE6EAF0);
+const warm = Color(0xFFFFF0E7);
+const blue = Color(0xFFEDF1FF);
 
 // The Scaffold paints the warm background underneath transparent system bars.
 const appSystemUiStyle = SystemUiOverlayStyle(
@@ -29,8 +32,8 @@ ThemeData buildTheme() => ThemeData(
   ),
   colorScheme: ColorScheme.fromSeed(
     seedColor: ink,
-    primary: ink,
-    secondary: coral,
+    primary: coral,
+    secondary: ink,
     surface: paper,
   ),
   fontFamily: 'sans-serif',
@@ -70,17 +73,40 @@ ThemeData buildTheme() => ThemeData(
   filledButtonTheme: FilledButtonThemeData(
     style: FilledButton.styleFrom(
       minimumSize: const Size(48, 48),
-      backgroundColor: ink,
+      backgroundColor: coral,
       foregroundColor: Colors.white,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(18)),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
       textStyle: const TextStyle(fontWeight: FontWeight.w700, fontSize: 15),
     ),
   ),
   bottomSheetTheme: const BottomSheetThemeData(
-    backgroundColor: paper,
+    backgroundColor: Colors.white,
     showDragHandle: true,
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.vertical(top: Radius.circular(30)),
+    ),
+  ),
+  navigationBarTheme: NavigationBarThemeData(
+    backgroundColor: Colors.white,
+    surfaceTintColor: Colors.transparent,
+    indicatorColor: warm,
+    elevation: 0,
+    height: 64,
+    labelBehavior: NavigationDestinationLabelBehavior.alwaysShow,
+    labelTextStyle: WidgetStateProperty.resolveWith(
+      (states) => TextStyle(
+        fontSize: 11,
+        color: states.contains(WidgetState.selected) ? coral : muted,
+        fontWeight: states.contains(WidgetState.selected)
+            ? FontWeight.w700
+            : FontWeight.w500,
+      ),
+    ),
+    iconTheme: WidgetStateProperty.resolveWith(
+      (states) => IconThemeData(
+        size: 24,
+        color: states.contains(WidgetState.selected) ? coral : muted,
+      ),
     ),
   ),
   sliderTheme: const SliderThemeData(

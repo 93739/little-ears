@@ -1,11 +1,13 @@
 # 小耳朵英语 · Little Ears
 
-独立 Flutter 项目，首发目标为 Android。面向低龄家庭的简单英语听播应用。
+独立 Flutter 项目，首发目标为 Android。面向低龄家庭、以儿歌和故事为主的英语听播应用。
 
 ## 已实现
 
 - 12 段内置英语音频：4 段原创童谣朗读、4 段生活短句、4 段短故事。
-- 分类浏览、播放页、中英逐句字幕、进度拖动、上/下一首、播放列表。
+- 儿歌 / 故事双入口与封面内容库；生活英语作为次级分类。
+- 播放页支持返回按钮和下滑关闭（跟手拖动、短拖动回弹），关闭页面后继续播放；固定操作区提供中英逐句字幕、松手后跳转进度、上/下一首、睡前定时和播放列表。
+- 底部「首页 / 收藏 / 设置」页面切换，各页保留浏览位置；迷你播放器固定在 Tab 上方。
 - 顺序播放、列表循环、单曲循环。
 - 本地收藏、最近播放曲目记忆。
 - 5/10/15/30/60 分钟定时停止，语音可设置 1–120 分钟。
@@ -41,9 +43,9 @@ flutter build apk --release --target-platform android-arm64
 flutter test integration_test/android_smoke_test.dart -d <Android设备ID>
 ```
 
-此前的点按语音版本通过过 18 项单元/界面检查及 Android 12 真机播放检查。本次喊名字唤醒改造按使用者要求没有打包、运行测试或安装到设备，唤醒效果、录音与播放的兼容性仍待真机确认。
+此前的点按语音版本通过过 18 项单元/界面检查及 Android 12 真机播放检查。后续语音唤醒及新版界面改造按使用者要求没有打包、运行测试或安装到设备，唤醒效果、录音与播放的兼容性仍待真机确认。
 
-界面截图：[首页](docs/screenshots/home.png)、[播放页](docs/screenshots/player.png)。
+首版历史截图：[首页](docs/screenshots/home.png)、[播放页](docs/screenshots/player.png)。新版页面结构和视觉规范见 [设计说明](docs/design.md)，尚未生成新的运行截图。
 
 APK：`build/app/outputs/flutter-apk/app-debug.apk`。
 当前 release 配置仍使用脚手架的调试签名；商店发布需配置自己的应用 ID、正式签名及发布材料。

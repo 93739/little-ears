@@ -55,7 +55,7 @@ void main() {
     await tester.pumpAndSettle();
     expect(find.text('我的小收藏'), findsOneWidget);
     expect(find.text('1 段音频'), findsOneWidget);
-    await tester.tap(find.byKey(const Key('favorites')));
+    await tester.tap(find.byKey(const Key('tab-home')));
     await tester.pumpAndSettle();
     await tester.tap(find.byKey(const Key('voice-open')));
     await tester.pumpAndSettle();
